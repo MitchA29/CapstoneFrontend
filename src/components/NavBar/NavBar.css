@@ -1,0 +1,68 @@
+li {
+    list-style: none;
+    text-decoration-line: none;
+    color: white;
+}
+
+.Nav {
+    color: white;
+    height: 5em;
+    display:inline-flex;
+    width: 100%;
+    margin-left: 90em;
+}
+
+.NavParent {
+    background-color:purple;
+    text-align: right;
+    
+
+}
+
+.HomeNav {
+    color: white;
+    text-decoration: none;
+    margin-right: 1em;
+    padding-top: 1em;
+}
+
+.ProfileNav {
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-top: 1em;
+    color: white;
+    text-decoration: none;
+}
+
+.SignupNav {
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-top: 1em;
+    color: white;
+    text-decoration: none;
+}
+
+.LoginNav {
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-top: 1em;
+    color: white;
+    text-decoration: none;
+}
+
+.LogoutNav {
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-top: 1em;
+    color: white;
+    text-decoration: none;
+}
+
+.ProductsNav {
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-top: 1em;
+    color: white;
+    text-decoration: none;
+}
+
