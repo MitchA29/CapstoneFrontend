@@ -1,68 +1,40 @@
-li {
+.navbar {
+    height: 80 px;
+    max-width: 100%;
+    background-color: #f1eade;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:  0 2rem;
+    font-size: 1.2rem;
+}
+
+.nav-logo {
+    text-decoration: none;
+    color: black;
+    font-size: 2.0rem;
+}
+
+.nav-links {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 20px;
     list-style: none;
-    text-decoration-line: none;
-    color: white;
 }
 
-.Nav {
-    color: white;
-    height: 5em;
-    display:inline-flex;
-    width: 100%;
-    margin-left: 90em;
-}
-
-.NavParent {
-    background-color:purple;
-    text-align: right;
-    
-
-}
-
-.HomeNav {
-    color: white;
+.nav-link {
     text-decoration: none;
-    margin-right: 1em;
-    padding-top: 1em;
+    color: black;
+    transition: 0.3s all;
 }
 
-.ProfileNav {
-    margin-left: 1em;
-    margin-right: 1em;
-    padding-top: 1em;
-    color: white;
-    text-decoration: none;
+.nav-link:hover {
+    color: grey;
 }
 
-.SignupNav {
-    margin-left: 1em;
-    margin-right: 1em;
-    padding-top: 1em;
-    color: white;
-    text-decoration: none;
+.nav-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
 }
-
-.LoginNav {
-    margin-left: 1em;
-    margin-right: 1em;
-    padding-top: 1em;
-    color: white;
-    text-decoration: none;
-}
-
-.LogoutNav {
-    margin-left: 1em;
-    margin-right: 1em;
-    padding-top: 1em;
-    color: white;
-    text-decoration: none;
-}
-
-.ProductsNav {
-    margin-left: 1em;
-    margin-right: 1em;
-    padding-top: 1em;
-    color: white;
-    text-decoration: none;
-}
-

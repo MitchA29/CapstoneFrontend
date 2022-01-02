@@ -6,13 +6,17 @@ import { Link } from "react-router-dom";
 const LandingPage = (props)=>{
     return(
         <div className="LandingPageParent">
-            <div className="container-fluid">
-                <h1 className="welcome">Dewey</h1>
-                <p className="intro">Read. Share. Explore.</p>
+            <div className="SlideOne">
+                <div className="SlideOne-text">
+                    <h1 className="welcome">FOR THE LOVE OF STORIES</h1>
+                </div>
+                <div class="HomeButtons">
+                    <button className="LogInButton" type="submit">Log In</button>
+                    <button className="SignUpButton" type="submit">Sign Up</button>
+                </div>
             </div>
-            <div class="HomeButtons">
-                <button className="LogInButton" type="submit">Log In</button>
-                <button className="SignUpButton" type="submit">Sign Up</button>
+            <div className="SlideOne-image">
+            <img src="LandingPageImage.png" alt="IntroPicture"/>
             </div>
         </div>
     );

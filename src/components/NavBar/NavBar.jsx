@@ -5,37 +5,33 @@ import { Link } from "react-router-dom";
 
 const NavBar = ({ user }) => {
     return (
-        <div className="NavParent">
-            {user && <h4>Welcome {user.username}</h4>}
-            <ul className = "Nav">
-                <li>
-                    <Link className="HomeNav" to = "/">Home</Link>
+        <nav className="navbar">
+            <Link to="/" className="nav-logo" >
+                Dewey
+            </Link>
+            <ul className='nav-links'>
+                <li className="nav-item">
+                    <Link to="/" className="nav-link" >
+                        Home
+                    </Link>
                 </li>
-                <li>
-                    <Link className="ProfileNav" to="/profile">Profile</Link>
+                <li className="nav-item">
+                    <Link to="/explore" className="nav-link" >
+                        Explore
+                    </Link>
                 </li>
-                {!user &&
-                    <React.Fragment>
-                        <li>
-                            <Link className="SignupNav" to="/signup">Sign Up</Link>
-                        </li>
-                        <li>
-                            <Link className="LoginNav" to="/login">Log In</Link>
-                        </li>
-                    </React.Fragment>
-                }
-                {user &&
-                    <React.Fragment>
-                        <li>
-                            <Link className="LogoutNav" to="logout">Logout</Link>
-                    </li>
-                </React.Fragment>
-            }
-                <li>
-                    <Link className="ProductsNav" to="/products">Products</Link>
+                <li className="nav-item">
+                    <Link to="/bookclubs" className="nav-link" >
+                        Book Clubs
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/profile" className="nav-link" >
+                        Profile
+                    </Link>
                 </li>
             </ul>
-        </div>
+        </nav>
     );
 }
 export default NavBar;
