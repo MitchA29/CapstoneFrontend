@@ -8,13 +8,15 @@ const SignUp = () => {
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [middle, setMiddle] = useState("");
 
     const newPerson = {
-        firstName: firstName,
-        lastName: lastName,
+        first_name: firstName,
+        last_name: lastName,
         email: email,
         username: username,
         password: password,
+        middle_name: "middle",
     }
 
     let handleSubmit = async (event) => {
@@ -23,7 +25,7 @@ const SignUp = () => {
         console.log(response.data);
         if (response.request.status === 201) {
             alert("You're in! Please sign in to explore.");
-            window.location = "/login/";
+            window.location = "/login";
         }
     };
 

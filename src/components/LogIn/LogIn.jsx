@@ -12,7 +12,7 @@ const LogIn = () => {
         let response = await axios.post("http://127.0.0.1:8000/api/auth/login/", logInCred);
         console.log(response.data);
         localStorage.setItem("token", response.data.access);
-        window.location = "/profile/";
+        window.location = "/profile";
     }
 
     return (
