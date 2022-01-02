@@ -1,0 +1,57 @@
+
+.signUpParent {
+    background-color: rgb(192, 193, 197);
+    margin-left: 5em;
+    margin-right: 5em;
+    margin-top: 10em;
+    margin-bottom: 5em;
+    max-width: 100%;
+    height: auto;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+form {
+    max-width: 100%;
+    display: center;
+}
+
+#inputFirstName {
+    margin-left: 7em;
+    margin-right: 3em;
+}
+#inputLastName {
+    margin-left: 7em;
+}
+
+#inputEmail {
+    margin-left: 7em;
+
+}
+
+#inputUserName {
+    margin-left: 7em;
+    margin-right: 3em;
+}
+
+#inputPassword {
+    margin-left: 7em;
+
+}
+
+.signUpButton {
+    background-color: rgb(49, 84, 221);
+    color: white;
+    border: none;
+    margin-left: 41%;
+    margin-bottom: 2%;
+    margin-top: 2em;
+    border-radius: 5px 5px;
+    width: 15em;
+    height: 2em;
+}
+
+.form-label {
+    margin-left: 7em;
+}

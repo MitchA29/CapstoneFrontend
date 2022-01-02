@@ -5,6 +5,7 @@ import { Route, Routes} from "react-router-dom";
 import NavBar from "./NavBar/NavBar";
 import jwtDecode from "jwt-decode";
 import LandingPage from "./LandingPage/LandingPage"
+import SignUp from "./SignUp/SignUp";
 
 class App extends Component {
     constructor(props){
@@ -39,6 +40,8 @@ class App extends Component {
                 <div>
                     <Routes>
                         <Route path="/" exact element={<LandingPage/>} />
+                        <Route path="/signup/" exact element={<SignUp/>} />
+
                     </Routes>
               </div>
             </div>
