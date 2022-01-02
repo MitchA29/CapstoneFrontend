@@ -6,31 +6,29 @@ import NavBar from "./NavBar/NavBar";
 import jwtDecode from "jwt-decode";
 import LandingPage from "./LandingPage/LandingPage"
 import SignUp from "./SignUp/SignUp";
+import LogIn from "./LogIn/LogIn";
+import Profile from "./Profile/Profile";
 
 class App extends Component {
     constructor(props){
         super(props);
-        this.state = {
-            user:''     
-    }
+        this.state = { };
 }
 
     componentDidMount(){
         const jwt = localStorage.getItem('token');
         try{
             const user = jwtDecode(jwt)
-            this.setState({
-                user
-            });
+            this.setState({user});
         } catch {
             console.log('hi')
         }
     }
 
-    // showProdcuts = async()=>{
-    //     let response = await axios.get(`https://localhost:44394/api/products/`)
-    //     console.log(response)
-    // }
+    showStories = async()=>{
+        let response = await axios.get(`http://127.0.0.1:8000/api/stories/all/`)
+        console.log(response)
+    }
 
     render(){
         const user = this.state.user;
@@ -39,8 +37,10 @@ class App extends Component {
                 <NavBar user = {user} />
                 <div>
                     <Routes>
-                        <Route path="/" exact element={<LandingPage/>} />
+                        <Route path="/" element={<LandingPage/>} />
                         <Route path="/signup/" exact element={<SignUp/>} />
+                        <Route path="/login/" exact element={<LogIn/>} />
+                        <Route path="/profile/" exact element={<Profile/>} />
 
                     </Routes>
               </div>
