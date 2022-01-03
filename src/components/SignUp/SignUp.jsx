@@ -8,7 +8,6 @@ const SignUp = () => {
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [middle, setMiddle] = useState("");
 
     const newPerson = {
         first_name: firstName,
