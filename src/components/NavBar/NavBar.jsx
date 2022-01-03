@@ -13,32 +13,32 @@ const NavBar = ({ user }) => {
             )}
             {user && (
                 <>
-                    <Nav.Link to="/" className="nav-logo" >
+                    <NavLink to="/" className="nav-logo" >
                         Dewey
-                    </Nav.Link>
+                    </NavLink>
                     <ul className="nav-links">
                         <li className="nav-item">
-                            <Nav.Link to="/" className="nav-link" >
+                            <NavLink to="/" className="nav-link" >
                                 Home
-                            </Nav.Link>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <Nav.Link to="/explore" className="nav-link" >
+                            <NavLink to="/explore" className="nav-link" >
                                 Explore
-                            </Nav.Link>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <Nav.Link to="/bookclubs" className="nav-link" >
+                            <NavLink to="/bookclubs" className="nav-link" >
                                 Book Clubs
-                            </Nav.Link>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <Nav.Link to="/profile" className="nav-link" >
+                            <NavLink to="/profile" className="nav-link" >
                                 Profile
-                            </Nav.Link>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <Nav.Link href="/">Logout</Nav.Link>
+                            <NavLink to="/" className="nav-link">Logout</NavLink>
                         </li>
                     </ul>
                 </>
