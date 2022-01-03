@@ -19,14 +19,17 @@ function Explore(){
 
     return(
         <div className="exploreParent">
-            <div class="card">
-                <h5 class="card-header">Featured</h5>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+            {stories.map((getStories)=>
+            <Card className="card mb-3">
+                <Card.Body>
+                    <h4 className="card-title">{getStories.storyName}</h4>
+                    <h5 className="random">By: {getStories.storyAuthor_id.first_name}</h5>
+                    <h6 className="random">Genre: {getStories.storyGenre}</h6>
+                    <p className= "card-text">{getStories.storyDescription}</p>
+                    <a href="#" className="btn btn-primary">Download</a>
+                </Card.Body>
+            </Card>
+            )}
         </div>
     )
 }
