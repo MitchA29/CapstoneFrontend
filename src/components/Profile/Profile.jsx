@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 
 const Profile = (props)=>{
     return(
-        <div className="ProfileParent">
-            <div className="ProfileTitle">
-                <h1 className="welcome">Welcome!</h1>
+        <div className="profileParent">
+            <div className="profileheader">
+            <a className="uploadButton" href="/upload">Upload</a>
             </div>
         </div>
     );
