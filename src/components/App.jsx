@@ -8,6 +8,7 @@ import LandingPage from "./LandingPage/LandingPage"
 import SignUp from "./SignUp/SignUp";
 import LogIn from "./LogIn/LogIn";
 import Profile from "./Profile/Profile";
+import Explore from "./Explore/Explore";
 
 class App extends Component {
     constructor(props){
@@ -38,9 +39,10 @@ class App extends Component {
                 <div>
                     <Routes>
                         <Route path="/" element={<LandingPage/>} />
-                        <Route path="/signup/" exact element={<SignUp/>} />
-                        <Route path="/login/" exact element={<LogIn/>} />
-                        <Route path="/profile/" exact element={<Profile/>} />
+                        <Route path="/signup" exact element={<SignUp/>} />
+                        <Route path="/login" exact element={<LogIn/>} />
+                        <Route path="/profile" exact element={<Profile/>} />
+                        <Route path="/explore" element={<Explore/>} />
 
                     </Routes>
               </div>
