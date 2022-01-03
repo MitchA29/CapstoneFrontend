@@ -36,6 +36,7 @@ img{
     display: inline-flex;
     text-align: center;
     margin-left: 10em;
+    margin-top: 1em;
 }
 
 .LogInButton {
@@ -44,9 +45,12 @@ img{
     border: none;
     margin-right: 5%;
     margin-bottom: 5%;
+    padding: 10px;
     border-radius: 5px 5px;
     width: 15em;
-    height: 2em;
+    height: 3em;
+    text-decoration: none;
+    text-align: center;
 }
 
 .SignUpButton {
@@ -55,7 +59,9 @@ img{
     border: none;
     margin-left: 2%;
     margin-bottom: 5%;
+    padding: 10px;
     border-radius: 5px 5px;
     width: 15em;
-    height: 2em;
+    height: 3em;
+    text-decoration: none;
 }
