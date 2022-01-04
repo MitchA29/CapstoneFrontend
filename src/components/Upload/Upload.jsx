@@ -2,9 +2,10 @@ import React, {useState} from "react";
 import "./Upload.css";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
+import { useRoutes } from "react-router";
 
 
-const Upload = () => {
+const Upload = ({user}) => {
     const [storyDocument, setStoryDocument] = useState("");
     const [storyName, setStoryName] = useState("");
     const [storyDescription, setStoryDescription] = useState("");
@@ -26,7 +27,7 @@ const Upload = () => {
         storyName: storyName,
         storyDescription: storyDescription,
         storyGenre: storyGenre,
-        author: jwtDecode(token).user_id
+        storyAuthor: jwtDecode(token)
         }
        
     
@@ -35,16 +36,24 @@ const Upload = () => {
         headers: {
             Authorization: 'Bearer ' + token}});
         console.log(response.data);
+        if (response.request.status === 201) {
+            alert("Club created!");
+            window.location = "/profile";
+        }
     }
 
     return (
         <div className="uploadParent">
             <div className="uploadForm">
                 <form class="row g-3" onSubmit={(event) => handleSubmit(event)}>
-                    <div class="col-md-5">
+                    {/* <div class="col-md-5">
                         <label for="formFileSm" class="form-label" onChange={(event) => setStoryDocument(event.target.value)}>Document</label>
                         <input class="form-control" type="file" id="formFile"/>
-                        </div>
+                        </div> */}
+                        <div class="col-md-5">
+                        <label for="inputStoryName" class="form-label">Document</label>
+                        <input type="text" class="form-control" id="inputStoryName"onChange={(event) => setStoryDocument(event.target.value)}/>
+                    </div>
                     <div class="col-md-5">
                         <label for="inputStoryName" class="form-label">Title</label>
                         <input type="text" class="form-control" id="inputStoryName"onChange={(event) => setStoryName(event.target.value)}/>
@@ -56,22 +65,26 @@ const Upload = () => {
                     <div class="col-md-5">
                     <select class="form-select" aria-label="Genre" id="inputStoryGenre" onChange={(event) => setStoryGenre(event.target.value)}>
                         <option selected>Genre</option>
-                        <option value="1">Action and Aventure</option>
-                        <option value="2">Classics</option>
-                        <option value="3">Comic/Graphic</option>
-                        <option value="4">Mystery</option>
-                        <option value="5">Fantasy</option>
-                        <option value="6">Historical Fiction</option>
-                        <option value="7">Horror</option>
-                        <option value="8">Literary Fiction</option>
-                        <option value="9">Romance</option>
-                        <option value="10">Science Fiction</option>
-                        <option value="11">Short Story</option>
-                        <option value="12">Suspence/Thriller</option>
-                        <option value="13">Biographies and Autobiographies</option>
-                        <option value="14">Other</option>
+                        <option value="Action and Aventure">Action and Aventure</option>
+                        <option value="Classics">Classics</option>
+                        <option value="Comic/Graphic">Comic/Graphic</option>
+                        <option value="Mystery">Mystery</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Historical Fiction">Historical Fiction</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Literary Fiction">Literary Fiction</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Science Fiction">Science Fiction</option>
+                        <option value="Short Story">Short Story</option>
+                        <option value="Suspence/Thriller">Suspence/Thriller</option>
+                        <option value="Biographies and Autobiographies">Biographies and Autobiographies</option>
+                        <option value="Other">Other</option>
                     </select>
                     </div>
+                    {/* <div class="col-md-5">
+                        <label for="inputStoryName" class="form-label">Genre</label>
+                        <input type="text" class="form-control" id="inputStoryName"onChange={(event) => setStoryGenre(event.target.value)}/>
+                    </div> */}
                     <div class="col-12">
                         <button type="submit" id="uploadButton" class="uploadButton">Upload</button>
                     </div>

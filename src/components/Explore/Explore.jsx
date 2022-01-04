@@ -15,12 +15,25 @@ function Explore(){
         setStories(response.data)
     }
 
-    const addToFavorites = (story) =>{
-        console.log(story)
-    }
-
     return(
         <div className="exploreParent">
+            {/* <select class="form-select" aria-label="Default select example">
+            <option selected>Filter By Genre</option>
+                        <option value="Action and Aventure">Action and Aventure</option>
+                        <option value="Classics">Classics</option>
+                        <option value="Comic/Graphic">Comic/Graphic</option>
+                        <option value="Mystery">Mystery</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Historical Fiction">Historical Fiction</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Literary Fiction">Literary Fiction</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Science Fiction">Science Fiction</option>
+                        <option value="Short Story">Short Story</option>
+                        <option value="Suspence/Thriller">Suspence/Thriller</option>
+                        <option value="Biographies and Autobiographies">Biographies and Autobiographies</option>
+                        <option value="Other">Other</option>
+            </select> */}
             <container>
             <div>
                 <Row>
@@ -29,7 +42,7 @@ function Explore(){
                     <Card className="storyCard">
                         <Card.Body>
                             <h4 className="card-title">{getStories.storyName}</h4>
-                            <h5 className="random">By: {getStories.storyAuthor_id.first_name}</h5>
+                            <h5 className="random">By: {getStories.storyAuthor_id}</h5>
                             <h6 className="random">Genre: {getStories.storyGenre}</h6>
                             <p className= "card-text">{getStories.storyDescription}</p>
                             <a href="#" className="btn btn-primary">Download</a>

@@ -4,6 +4,7 @@ import axios from 'axios';
 import {Card} from "react-bootstrap";
 import { Container, Row, Col } from "reactstrap";
 
+
 function Profile(){
     const [stories, setStories] = useState([])
     const [clubs, setClubs] = useState([])
@@ -12,6 +13,12 @@ function Profile(){
         getStories()
         getClubs()
     },[])
+
+    // const deleteStory = stories.filter(i => stories.id); {
+    //         axios.delete ("http://127.0.0.1:8000/api/stories/", + id);
+    //     }
+    
+
 
     const getStories = async () =>{
         let response = await axios.get('http://127.0.0.1:8000/api/stories/', {
@@ -44,10 +51,11 @@ function Profile(){
                             <Card className="storyCardProfile">
                                 <Card.Body>
                                     <h4 className="card-title">{getStories.storyName}</h4>
-                                    <h5 className="random">By: {getStories.storyAuthor_id.first_name}</h5>
+                                    <h5 className="random">By: {getStories.storyAuthor_id}</h5>
                                     <h6 className="random">Genre: {getStories.storyGenre}</h6>
                                     <p className= "card-text">{getStories.storyDescription}</p>
-                                    <a href="#" className="btn btn-primary">Download</a>
+                                    <a href="#" className="btn btn-primary" id="downloadButton">Download</a>
+                                    <a href="/" className="btn btn-primary" >Delete</a>
                                 </Card.Body>
                             </Card>
                         </Col>

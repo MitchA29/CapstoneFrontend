@@ -1,5 +1,6 @@
 .profileParent {
     background-color: #f1eade;
+    min-height: 700px;
 }
 
 .storyHeader {
@@ -46,6 +47,7 @@
     height: 3em;
     text-decoration: none;
     text-align: center;
+    margin-left: .5em;
     margin-right: 50em;
 
 }
@@ -74,4 +76,8 @@
     width: 27em;
     height: 13em;
     margin-bottom: 2em;
+}
+
+#downloadButton {
+    margin-right: 1em;
 }

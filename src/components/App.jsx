@@ -14,6 +14,7 @@ import Upload from "./Upload/Upload";
 import LogoutUser from "./Logout/Logout";
 import CreateClub from "./CreateClub/CreateClub";
 
+
 class App extends Component {
     constructor(props){
         super(props);
@@ -46,7 +47,6 @@ class App extends Component {
                         <Route path="/upload" element={<Upload/>} />
                         <Route path="/logout" element={<LogoutUser/>} />
                         <Route path="/createclub" element={<CreateClub/>} />
-
                     </Routes>
               </div>
             </div>
