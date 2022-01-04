@@ -23,8 +23,8 @@ class App extends Component {
         try{
             const user = jwtDecode(jwt)
             this.setState({user});
-        } catch {
-            console.log('hi')
+        } catch (error){
+            console.log(error);
         }
     }
 

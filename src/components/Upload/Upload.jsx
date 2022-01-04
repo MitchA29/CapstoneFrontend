@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./Upload.css";
 import axios from "axios";
+import jwtDecode from "jwt-decode";
 
 
 const Upload = () => {
@@ -9,30 +10,39 @@ const Upload = () => {
     const [storyDescription, setStoryDescription] = useState("");
     const [storyGenre, setStoryGenre] = useState("");
 
-    const newStory = {
+    let newStory = {
         storyDocument: storyDocument,
         storyName: storyName,
         storyDescription: storyDescription,
         storyGenre: storyGenre,
-        // storyAuthor_id: user.id,
     }
 
     let handleSubmit = async (event) => {
+        const token = localStorage.getItem('token');
+        console.log(jwtDecode(token))
         event.preventDefault();
-        let response = await axios.post("http://127.0.0.1:8000/api/stories/", newStory);
-        console.log(response.data);
-        if (response.request.status === 201) {
-            alert("Story uploaded!");
-            window.location = "/profile";
+        newStory = {
+        storyDocument: storyDocument,
+        storyName: storyName,
+        storyDescription: storyDescription,
+        storyGenre: storyGenre,
+        author: jwtDecode(token).user_id
         }
-    };
+       
+    
+    console.log(token)
+    let response = await axios.post("http://127.0.0.1:8000/api/stories/", newStory, {
+        headers: {
+            Authorization: 'Bearer ' + token}});
+        console.log(response.data);
+    }
 
     return (
         <div className="uploadParent">
             <div className="uploadForm">
-                <form class="row g-3"onSubmit={(event) => handleSubmit(event)}>
+                <form class="row g-3" onSubmit={(event) => handleSubmit(event)}>
                     <div class="col-md-5">
-                        <label for="formFileSm" class="form-label">Document</label>
+                        <label for="formFileSm" class="form-label" onChange={(event) => setStoryDocument(event.target.value)}>Document</label>
                         <input class="form-control" type="file" id="formFile"/>
                         </div>
                     <div class="col-md-5">
@@ -44,7 +54,7 @@ const Upload = () => {
                         <input type="text" class="form-control" id="inputStoryDescription" onChange={(event) => setStoryDescription(event.target.value)}/>
                     </div>
                     <div class="col-md-5">
-                    <select class="form-select" aria-label="Genre" id="inputStoryGenre" onChange={(event) => setStoryDescription(event.target.value)}>
+                    <select class="form-select" aria-label="Genre" id="inputStoryGenre" onChange={(event) => setStoryGenre(event.target.value)}>
                         <option selected>Genre</option>
                         <option value="1">Action and Aventure</option>
                         <option value="2">Classics</option>
