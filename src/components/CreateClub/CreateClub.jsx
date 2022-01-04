@@ -23,7 +23,7 @@ const CreateClub = () => {
         clubName: clubName,
         clubDescription: clubDescription,
         clubBook: clubBook,
-        creator: jwtDecode(token).user_id
+        creator: jwtDecode(token)
         }
        
     

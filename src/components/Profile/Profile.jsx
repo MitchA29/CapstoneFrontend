@@ -81,7 +81,7 @@ function Profile(){
                                     <h4 className="card-title">{getClubs.clubName}</h4>
                                     <h5 className="random">ringleader: {getClubs.clubAuthor_id}</h5>
                                     <p className= "card-text">{getClubs.clubDescription}</p>
-                                    <a href="#" className="btn btn-primary">Join</a>
+                                    <a href="/" className="btn btn-primary" >Delete</a>
                                 </Card.Body>
                             </Card>
                         </Col>
