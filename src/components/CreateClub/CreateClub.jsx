@@ -32,6 +32,10 @@ const CreateClub = () => {
         headers: {
             Authorization: 'Bearer ' + token}});
         console.log(response.data);
+        if (response.request.status === 201) {
+            alert("Club created!");
+            window.location = "/profile";
+        }
     }
 
     return (
