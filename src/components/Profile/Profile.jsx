@@ -8,6 +8,8 @@ const Profile = (props)=>{
         <div className="profileParent">
             <div className="profileheader">
             <a className="uploadButton" href="/upload">Upload</a>
+            <a className="createClubButton" href="/createclub">Create Club</a>
+
             </div>
         </div>
     );
