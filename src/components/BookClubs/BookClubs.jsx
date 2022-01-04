@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {Card} from "react-bootstrap";
+import { Container, Row, Col } from "reactstrap";
+import "./BookClubs.css";
 
 function BookClubs(){
     const [Clubs, setClubs] = useState([])
@@ -14,9 +16,11 @@ function BookClubs(){
     }
 
     return(
-        <div className="exploreParent">
-            {Clubs.map((getClubs)=>
-            <Card className="card mb-3">
+        <div className="bookClubsParent">
+            <container>
+                <Row>
+                {Clubs.map((getClubs)=>
+            <Card className="clubCard">
                 <Card.Body>
                     <h4 className="card-title">{getClubs.clubName}</h4>
                     <h5 className="random">ringleader: {getClubs.clubAuthor_id}</h5>
@@ -25,6 +29,9 @@ function BookClubs(){
                 </Card.Body>
             </Card>
             )}
+
+                </Row>
+            </container>
         </div>
     )
 }

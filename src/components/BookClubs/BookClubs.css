@@ -1,0 +1,14 @@
+.bookClubsParent {
+    margin-top: 1em;
+    display: inline-flex;
+    max-width: 100%;
+    margin-left: 2em;
+    min-height: 700px;;
+}
+
+.clubCard {
+    width: 27em;
+    margin-bottom: 2em;
+    margin-left: 1rem;
+    margin-right: 1em;
+}
