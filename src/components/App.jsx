@@ -11,6 +11,7 @@ import Profile from "./Profile/Profile";
 import Explore from "./Explore/Explore";
 import BookClubs from "./BookClubs/BookClubs"
 import Upload from "./Upload/Upload";
+import LogoutUser from "./Logout/Logout";
 
 class App extends Component {
     constructor(props){
@@ -28,11 +29,6 @@ class App extends Component {
         }
     }
 
-    showStories = async()=>{
-        let response = await axios.get(`http://127.0.0.1:8000/api/stories/all/`)
-        console.log(response)
-    }
-
     render(){
         const user = this.state.user;
         return(
@@ -47,6 +43,8 @@ class App extends Component {
                         <Route path="/explore" element={<Explore/>} />
                         <Route path="/bookclubs" element={<BookClubs/>} />
                         <Route path="/upload" element={<Upload/>} />
+                        <Route path="/logout" element={<LogoutUser/>} />
+
                     </Routes>
               </div>
             </div>

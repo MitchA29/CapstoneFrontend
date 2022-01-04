@@ -3,12 +3,16 @@ import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Nav } from "react-bootstrap";
+import LogoutUser from "../Logout/Logout";
 
 const NavBar = ({ user }) => {
     return (
         <Nav className="navbar">
             {!user && (
                 <>
+                <NavLink to="/" className="nav-logo" >
+                        Dewey
+                </NavLink>
                 </>
             )}
             {user && (
@@ -38,7 +42,7 @@ const NavBar = ({ user }) => {
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/" className="nav-link">Logout</NavLink>
+                            <Nav.Link to="/" className="nav-link" onClick={() => LogoutUser()}>Logout</Nav.Link> 
                         </li>
                     </ul>
                 </>
