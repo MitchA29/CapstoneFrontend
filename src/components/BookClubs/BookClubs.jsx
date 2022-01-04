@@ -20,6 +20,7 @@ function BookClubs(){
             <container>
                 <Row>
                 {Clubs.map((getClubs)=>
+                <Col xs="4">
             <Card className="clubCard">
                 <Card.Body>
                     <h4 className="card-title">{getClubs.clubName}</h4>
@@ -28,8 +29,8 @@ function BookClubs(){
                     <a href="#" className="btn btn-primary">Join</a>
                 </Card.Body>
             </Card>
+            </Col>
             )}
-
                 </Row>
             </container>
         </div>

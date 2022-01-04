@@ -22,8 +22,10 @@ function Explore(){
     return(
         <div className="exploreParent">
             <container>
+            <div>
                 <Row>
                 {stories.map((getStories)=>
+                <Col xs="4">
                     <Card className="storyCard">
                         <Card.Body>
                             <h4 className="card-title">{getStories.storyName}</h4>
@@ -33,8 +35,10 @@ function Explore(){
                             <a href="#" className="btn btn-primary">Download</a>
                         </Card.Body>
                     </Card>
+                    </Col>
                     )}
                 </Row>
+                </div>
             </container>
         </div>
     )
