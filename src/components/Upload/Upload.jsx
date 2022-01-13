@@ -21,6 +21,7 @@ const Upload = ({user}) => {
     let handleSubmit = async (event) => {
         const token = localStorage.getItem('token');
         console.log(jwtDecode(token))
+        console.log(event)
         event.preventDefault();
         newStory = {
         storyDocument: storyDocument,
@@ -37,7 +38,7 @@ const Upload = ({user}) => {
             Authorization: 'Bearer ' + token}});
         console.log(response.data);
         if (response.request.status === 201) {
-            alert("Club created!");
+            alert("Story created!");
             window.location = "/profile";
         }
     }

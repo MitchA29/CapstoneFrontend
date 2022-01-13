@@ -3,10 +3,12 @@ import axios from "axios";
 import {Card} from "react-bootstrap";
 import "./Explore.css";
 import { Container, Row, Col } from "reactstrap";
+import jwtDecode from "jwt-decode";
 
-function Explore(){
+function Explore(props){
     const [stories, setStories] = useState([])
     const [filteredStories, setFilteredStories] = useState([])
+    const [favoriteStory, setFavoriteStory] = useState("");
     useEffect(()=>{
         getStories()
         getFilteredStories()
@@ -23,20 +25,40 @@ function Explore(){
         setFilteredStories(filtered)
     }
 
+    const handleSubmit = async (Object) => {
+        const token = localStorage.getItem('token');
+        const decodeToken = jwtDecode(token)
+        console.log(decodeToken)
+        console.log(Object)
+        let newFavorite = {
+            favoriteStory: Object.id,
+            favoriteOwner: decodeToken.user_id,
+            }
+        let response = await axios.post("http://127.0.0.1:8000/api/favorites/", newFavorite, {
+        headers: {
+            Authorization: 'Bearer ' + token}});
+        console.log(response.data);
+        if (response.request.status === 201) {
+            alert("story saved!");
+            window.location = "/profile";
+        }
+    }
+
     return(
         <div className="exploreParent">
             <Container className="exploreAll">
             <div>
                 <Row>
-                {stories.map((getStories)=>
+                {stories.map((Object) =>
                 <Col xs="4">
-                    <Card className="storyCard">
+                    <Card className="storyCard" key={Math.random()}>
                         <Card.Body>
-                            <h4 className="card-title">{getStories.storyName}</h4>
-                            <h5 className="random">By: {getStories.storyAuthor_id}</h5>
-                            <h6 className="random">Genre: {getStories.storyGenre}</h6>
-                            <p className= "card-text">{getStories.storyDescription}</p>
-                            <a href="#" className="btn btn-primary">Download</a>
+                            <h4 className="card-title">{Object.storyName}</h4>
+                            <h5 className="random">By: {Object.storyAuthor_id}</h5>
+                            <h6 className="random">Genre: {Object.storyGenre}</h6>
+                            <p className= "card-text">{Object.storyDescription}</p>
+                            <a href="#" className="favoriteButton"onClick={() => handleSubmit(Object)}>Favorite</a>
+                            <a href="#" className="downloadButton"onClick={() => handleSubmit(Object)}>Download</a>
                         </Card.Body>
                     </Card>
                     </Col>
@@ -45,7 +67,7 @@ function Explore(){
                 </div>
             </Container>
             <div className="exploreFilter">
-            <select className="filter" aria-label="Default select example" onChange={(event) => getFilteredStories(event.target.value)}>
+            <select className="filter" aria-label="Default select example" onChange={(storyid) => getFilteredStories(storyid.target.value)}>
             <option defaultValue>Filter By Genre</option>
                         <option value="Action and Aventure">Action and Aventure</option>
                         <option value="Classics">Classics</option>
@@ -65,15 +87,16 @@ function Explore(){
             <Container className="exploreAll">
             <div>
                 <Row>
-                {filteredStories.map((getFilteredStories)=>
+                {filteredStories.map((Object)=>
                 <Col xs="4">
                     <Card className="storyCard" key={Math.random()}>
                         <Card.Body>
-                            <h4 className="card-title">{getFilteredStories.storyName}</h4>
-                            <h5 className="random">By: {getFilteredStories.storyAuthor_id.first_name}</h5>
-                            <h6 className="random">Genre: {getFilteredStories.storyGenre}</h6>
-                            <p className= "card-text">{getFilteredStories.storyDescription}</p>
-                            <a href="#" className="btn btn-primary">Download</a>
+                            <h4 className="card-title">{Object.storyName}</h4>
+                            <h5 className="random">By: {Object.storyAuthor_id}</h5>
+                            <h6 className="random">Genre: {Object.storyGenre}</h6>
+                            <p className= "card-text">{Object.storyDescription}</p>
+                            <a href="#" className="favoriteButton"onClick={() => handleSubmit(Object)}>Favorite</a>
+                            <a href="#" className="downloadButton"onClick={() => handleSubmit(Object)}>Download</a>
                         </Card.Body>
                     </Card>
                     </Col>
