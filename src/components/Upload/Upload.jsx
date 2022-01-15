@@ -28,7 +28,7 @@ const Upload = ({user}) => {
         storyName: storyName,
         storyDescription: storyDescription,
         storyGenre: storyGenre,
-        storyAuthor: jwtDecode(token)
+        storyAuthor_id: jwtDecode(token).username
         }
        
     
@@ -82,10 +82,6 @@ const Upload = ({user}) => {
                         <option value="Other">Other</option>
                     </select>
                     </div>
-                    {/* <div class="col-md-5">
-                        <label for="inputStoryName" class="form-label">Genre</label>
-                        <input type="text" class="form-control" id="inputStoryName"onChange={(event) => setStoryGenre(event.target.value)}/>
-                    </div> */}
                     <div class="col-12">
                         <button type="submit" id="uploadButton" class="uploadButton">Upload</button>
                     </div>

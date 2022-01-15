@@ -7,28 +7,7 @@
     display: inline-flex;
     margin-top: 1em;
     margin-left: 1em;
-}
-
-.favoritesHeader {
-    display: inline-flex;
-    margin-top: 1em;
-    margin-left: 1em;
     border-bottom: solid 1px black;
-}
-
-.clubsHeader {
-    display: inline-flex;
-    margin-top: 1em;
-    margin-left: 1em;
-    border-bottom: solid 1px black;
-}
-
-.storyHeaderTitle {
-    margin-right: em;
-}
-
-.clubsHeaderTitle {
-    margin-right: em;
 }
 
 .uploadButtonProfile {
@@ -60,33 +39,28 @@
 
 }
 
-.bookClubsParentProfile {
-    margin-top: 1em;
-    display: inline-flex;
-    max-width: 100%;
-    margin-left: 1em;
-}
-
-.clubCardProfile {
-    width: 28em;
-    margin-bottom: 2em;
-    margin-bottom: 2em;
-    margin-right: 15em;
-}
-
 .exploreParentProfile {
     margin-top: 1em;
-
     max-width: 100%;
-    margin-left: 1em;
 }
 
-.storyCardProfile {
+.cardProfile {
     width: 27em;
     height: 13em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
 
-#downloadButton {
-    margin-right: 1em;
+.downloadButton {
+    background-color: rgb(20, 118, 199);
+    color: white;
+    border: none;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    padding: 10px;
+    border-radius: 5px 5px;
+    width: 15em;
+    height: 3em;
+    text-decoration: none;
+    text-align: center;
 }

@@ -9,6 +9,7 @@ function Explore(props){
     const [stories, setStories] = useState([])
     const [filteredStories, setFilteredStories] = useState([])
     const [favoriteStory, setFavoriteStory] = useState("");
+    const [storyAuthorUsername] = useState("");
     useEffect(()=>{
         getStories()
         getFilteredStories()
@@ -17,7 +18,8 @@ function Explore(props){
     const getStories = async () =>{
         let response = await axios.get('http://127.0.0.1:8000/api/stories/all/')
         setStories(response.data)
-    }
+        }
+    
 
     const getFilteredStories = async (event) => {
         console.log(event)
@@ -28,8 +30,8 @@ function Explore(props){
     const handleSubmit = async (Object) => {
         const token = localStorage.getItem('token');
         const decodeToken = jwtDecode(token)
-        console.log(decodeToken)
-        console.log(Object)
+        console.log(decodeToken.user_id)
+        console.log(Object.id)
         let newFavorite = {
             favoriteStory: Object.id,
             favoriteOwner: decodeToken.user_id,
@@ -54,7 +56,7 @@ function Explore(props){
                     <Card className="storyCard" key={Math.random()}>
                         <Card.Body>
                             <h4 className="card-title">{Object.storyName}</h4>
-                            <h5 className="random">By: {Object.storyAuthor_id}</h5>
+                            <h5 className="random">By: {Object.storyAuthor_id.username}</h5>
                             <h6 className="random">Genre: {Object.storyGenre}</h6>
                             <p className= "card-text">{Object.storyDescription}</p>
                             <a href="#" className="favoriteButton"onClick={() => handleSubmit(Object)}>Favorite</a>
