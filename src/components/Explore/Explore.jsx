@@ -56,7 +56,7 @@ function Explore(props){
                     <Card className="storyCard" key={Math.random()}>
                         <Card.Body>
                             <h4 className="card-title">{Object.storyName}</h4>
-                            <h5 className="random">By: {Object.storyAuthor_id.username}</h5>
+                            <h5 className="random">By: {Object.storyAuthor.username}</h5>
                             <h6 className="random">Genre: {Object.storyGenre}</h6>
                             <p className= "card-text">{Object.storyDescription}</p>
                             <a href="#" className="favoriteButton"onClick={() => handleSubmit(Object)}>Favorite</a>
@@ -94,7 +94,7 @@ function Explore(props){
                     <Card className="storyCard" key={Math.random()}>
                         <Card.Body>
                             <h4 className="card-title">{Object.storyName}</h4>
-                            <h5 className="random">By: {Object.storyAuthor_id}</h5>
+                            <h5 className="random">By: {Object.storyAuthor}</h5>
                             <h6 className="random">Genre: {Object.storyGenre}</h6>
                             <p className= "card-text">{Object.storyDescription}</p>
                             <a href="#" className="favoriteButton"onClick={() => handleSubmit(Object)}>Favorite</a>

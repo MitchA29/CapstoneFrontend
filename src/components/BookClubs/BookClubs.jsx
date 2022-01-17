@@ -24,7 +24,7 @@ function BookClubs(){
             <Card className="clubCard">
                 <Card.Body>
                     <h4 className="card-title">{getClubs.clubName}</h4>
-                    <h5 className="random">ringleader: {getClubs.clubAuthor_id}</h5>
+                    <h5 className="random">ringleader: {getClubs.clubCreator}</h5>
                     <h5 className="random">book of the week: {getClubs.clubBook}</h5>
                     <p className= "card-text">{getClubs.clubDescription}</p>
                     <a href="#" className="btn btn-primary">Join</a>

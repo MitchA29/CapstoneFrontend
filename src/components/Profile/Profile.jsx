@@ -55,7 +55,7 @@ function Profile(){
                             <Card className="cardProfile">
                                 <Card.Body>
                                     <h4 className="card-title">{setStories.storyName}</h4>
-                                    <h5 className="random">By: {setStories.storyAuthor_id.first_name}</h5>
+                                    <h5 className="random">By: {setStories.storyAuthor.username}</h5>
                                     <h6 className="random">Genre: {setStories.storyGenre}</h6>
                                     <p className= "card-text">{setStories.storyDescription}</p>
                                     <a href="#" className="downloadButton">Download</a>
@@ -83,7 +83,7 @@ function Profile(){
                             <Card className="cardProfile">
                                 <Card.Body>
                                     <h4 className="card-title">{setFavorites.favoriteStory.storyName}</h4>
-                                    <h5 className="random">By: {setFavorites.favoriteStory.username}</h5>
+                                    <h5 className="random">By: {setFavorites.favoriteStory.storyAuthor.username}</h5>
                                     <h6 className="random">Genre: {setFavorites.favoriteStory.storyGenre}</h6>
                                     <p className= "card-text">{setFavorites.favoriteStory.storyDescription}</p>
                                     <a href="#" className="downloadButton">Download</a>

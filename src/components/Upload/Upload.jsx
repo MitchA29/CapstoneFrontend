@@ -20,6 +20,7 @@ const Upload = ({user}) => {
 
     let handleSubmit = async (event) => {
         const token = localStorage.getItem('token');
+        const decodeToken = jwtDecode(token)
         console.log(jwtDecode(token))
         console.log(event)
         event.preventDefault();
@@ -28,7 +29,7 @@ const Upload = ({user}) => {
         storyName: storyName,
         storyDescription: storyDescription,
         storyGenre: storyGenre,
-        storyAuthor_id: jwtDecode(token).username
+        storyAuthor: decodeToken.user_id
         }
        
     
