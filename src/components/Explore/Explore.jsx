@@ -13,6 +13,7 @@ function Explore(props){
     useEffect(()=>{
         getStories()
         getFilteredStories()
+        handleSubmit()
     },[])
 
     const getStories = async () =>{
@@ -48,26 +49,6 @@ function Explore(props){
 
     return(
         <div className="exploreParent">
-            <Container className="exploreAll">
-            <div>
-                <Row>
-                {stories.map((Object) =>
-                <Col xs="4">
-                    <Card className="storyCard" key={Math.random()}>
-                        <Card.Body>
-                            <h4 className="card-title">{Object.storyName}</h4>
-                            <h5 className="random">By: {Object.storyAuthor.username}</h5>
-                            <h6 className="random">Genre: {Object.storyGenre}</h6>
-                            <p className= "card-text">{Object.storyDescription}</p>
-                            <a href="#" className="favoriteButton"onClick={() => handleSubmit(Object)}>Favorite</a>
-                            <a href="#" className="downloadButton"onClick={() => handleSubmit(Object)}>Download</a>
-                        </Card.Body>
-                    </Card>
-                    </Col>
-                    )}
-                </Row>
-                </div>
-            </Container>
             <div className="exploreFilter">
             <select className="filter" aria-label="Default select example" onChange={(storyid) => getFilteredStories(storyid.target.value)}>
             <option defaultValue>Filter By Genre</option>
@@ -94,7 +75,7 @@ function Explore(props){
                     <Card className="storyCard" key={Math.random()}>
                         <Card.Body>
                             <h4 className="card-title">{Object.storyName}</h4>
-                            <h5 className="random">By: {Object.storyAuthor}</h5>
+                            <h5 className="random">By: {Object.storyAuthor.username}</h5>
                             <h6 className="random">Genre: {Object.storyGenre}</h6>
                             <p className= "card-text">{Object.storyDescription}</p>
                             <a href="#" className="favoriteButton"onClick={() => handleSubmit(Object)}>Favorite</a>
@@ -107,6 +88,26 @@ function Explore(props){
                 </div>
             </Container>
             </div>
+            <Container className="exploreAll">
+            <div>
+                <Row>
+                {stories.map((Object) =>
+                <Col xs="4">
+                    <Card className="storyCard" key={Math.random()}>
+                        <Card.Body>
+                            <h4 className="card-title">{Object.storyName}</h4>
+                            <h5 className="random">By: {Object.storyAuthor.username}</h5>
+                            <h6 className="random">Genre: {Object.storyGenre}</h6>
+                            <p className= "card-text">{Object.storyDescription}</p>
+                            <a href="#" className="favoriteButton"onClick={() => handleSubmit(Object)}>Favorite</a>
+                            <a href="#" className="downloadButton"onClick={() => handleSubmit(Object)}>Download</a>
+                        </Card.Body>
+                    </Card>
+                    </Col>
+                    )}
+                </Row>
+                </div>
+            </Container>
         </div>
     )
 }

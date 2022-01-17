@@ -9,6 +9,7 @@
 .exploreAll {
     display: inline-flex;
     border-bottom: solid 1px black;
+    margin-top: 1em;
 
 }
 .storyCard {
@@ -21,8 +22,6 @@
 
 .filter {
     width: 50%;
-    margin-top: 1em;
-    margin-bottom: 1em;
     margin-left: 1.75em;
 }
 
