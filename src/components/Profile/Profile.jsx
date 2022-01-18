@@ -23,6 +23,14 @@ function Profile(){
         setStories(response.data)
     }
 
+    const deleteStory = async (story) =>{
+        console.log(story)
+        await axios.delete('http://127.0.0.1:8000/api/stories/${story}/', {
+            headers: {
+                Authorization: 'Bearer ' + token}});
+        getStories()
+    }
+
     const getClubs = async () =>{
         let response = await axios.get('http://127.0.0.1:8000/api/clubs/', {
             headers: {
@@ -38,10 +46,18 @@ function Profile(){
         setFavorites(response.data)
     }
 
+    const deleteFavorite = async (id) =>{
+        let response = await axios.get('http://127.0.0.1:8000/api/favorites/delete/', {
+            headers: {
+                Authorization: 'Bearer ' + token}});
+        console.log(response.data)
+        setFavorites(response.data)
+    }
+
     return(
         <div className="profileParent">
             <div className="storyHeader">
-                <div className="storyHeaderTitle">
+                <div className="headerTitle">
                     <h1>My Stories</h1>
                 </div>
                 <a className="uploadButtonProfile" href="/upload">Upload</a>
@@ -59,7 +75,7 @@ function Profile(){
                                     <h6 className="random">Genre: {setStories.storyGenre}</h6>
                                     <p className= "card-text">{setStories.storyDescription}</p>
                                     <a href="#" className="downloadButton">Download</a>
-                                    <a href="#" className="downloadButton" >Delete</a>
+                                    <a href="#" className="downloadButton" onClick={() => deleteStory(setStories.id)} >Delete</a>
                                     <a href="#" className="downloadButton" >...</a>
                                 </Card.Body>
                             </Card>
@@ -70,7 +86,7 @@ function Profile(){
                 </Container>
             </div>
             <div className="storyHeader">
-                <div className="favoritesHeaderTitle">
+                <div className="headerTitle">
                     <h1>My Favorites</h1>
                 </div>
             </div>
@@ -87,7 +103,7 @@ function Profile(){
                                     <h6 className="random">Genre: {setFavorites.favoriteStory.storyGenre}</h6>
                                     <p className= "card-text">{setFavorites.favoriteStory.storyDescription}</p>
                                     <a href="#" className="downloadButton">Download</a>
-                                    <a href="#" className="downloadButton">Unfavorite</a>
+                                    <a href="#" className="downloadButton" onClick={() => deleteFavorite(setFavorites.id)}>Unfavorite</a>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -97,10 +113,10 @@ function Profile(){
                 </Container>
             </div>
             <div className="storyHeader">
-                <div className="clubsHeaderTitle">
+                <div className="headerTitle">
                     <h1>My clubs</h1>
+                    <a className="createClubButtonProfile" href="/createclub">Create Club</a>
                 </div>
-                <a className="createClubButtonProfile" href="/createclub">Create Club</a>
             </div>
             <div className="exploreParentProfile">
                 <Container>

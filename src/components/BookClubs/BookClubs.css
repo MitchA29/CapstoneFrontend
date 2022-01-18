@@ -12,3 +12,17 @@
     margin-left: 1rem;
     margin-right: 1em;
 }
+
+.joinButton {
+    background-color: rgb(20, 118, 199);
+    color: white;
+    border: none;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    padding: 10px;
+    border-radius: 5px 5px;
+    width: 15em;
+    height: 3em;
+    text-decoration: none;
+    text-align: center;
+}

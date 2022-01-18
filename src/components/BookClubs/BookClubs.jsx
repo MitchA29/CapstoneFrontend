@@ -17,23 +17,23 @@ function BookClubs(){
 
     return(
         <div className="bookClubsParent">
-            <container>
+            <Container>
                 <Row>
                 {Clubs.map((getClubs)=>
                 <Col xs="4">
             <Card className="clubCard">
                 <Card.Body>
                     <h4 className="card-title">{getClubs.clubName}</h4>
-                    <h5 className="random">ringleader: {getClubs.clubCreator}</h5>
+                    <h5 className="random">ringleader: {getClubs.clubCreator.username}</h5>
                     <h5 className="random">book of the week: {getClubs.clubBook}</h5>
                     <p className= "card-text">{getClubs.clubDescription}</p>
-                    <a href="#" className="btn btn-primary">Join</a>
+                    <a href="#" className="joinButton">Join</a>
                 </Card.Body>
             </Card>
             </Col>
             )}
                 </Row>
-            </container>
+            </Container>
         </div>
     )
 }

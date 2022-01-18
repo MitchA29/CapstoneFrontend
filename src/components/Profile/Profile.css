@@ -8,6 +8,7 @@
     margin-top: 1em;
     margin-left: 1em;
     border-bottom: solid 1px black;
+    width: 100%;
 }
 
 .uploadButtonProfile {
@@ -21,7 +22,6 @@
     text-decoration: none;
     text-align: center;
     margin-left: .5em;
-    margin-right: 50em;
 }
 
 .createClubButtonProfile {
@@ -30,12 +30,11 @@
     border: none;
     padding: 9px;
     border-radius: 5px 5px;
-    width: 10em;
+    width: 8em;
     height: 3em;
     text-decoration: none;
     text-align: center;
-    margin-left: .5em;
-    margin-right: 50em;
+    margin-left: 1em;
 
 }
 
@@ -63,4 +62,8 @@
     height: 3em;
     text-decoration: none;
     text-align: center;
+}
+
+.headerTitle {
+    display: inline-flex;
 }

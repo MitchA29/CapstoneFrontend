@@ -13,6 +13,7 @@ import BookClubs from "./BookClubs/BookClubs"
 import Upload from "./Upload/Upload";
 import LogoutUser from "./Logout/Logout";
 import CreateClub from "./CreateClub/CreateClub";
+import Resources from "./Resources/Resources";
 
 
 class App extends Component {
@@ -41,6 +42,7 @@ class App extends Component {
                         <Route path="/" element={<LandingPage/>} />
                         <Route path="/signup" exact element={<SignUp/>} />
                         <Route path="/login" exact element={<LogIn/>} />
+                        <Route path="/resources" exact element={<Resources/>} />
                         <Route path="/profile" exact element={<Profile/>} />
                         <Route path="/explore" element={<Explore/>} />
                         <Route path="/bookclubs" element={<BookClubs/>} />

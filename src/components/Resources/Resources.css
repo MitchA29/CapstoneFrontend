@@ -1,0 +1,60 @@
+.resourcesParent {
+    background-color: #f1eade;
+    min-height: 700px;
+    display: inline-flex;
+    max-width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+
+}
+
+.resourcesSlideOne {
+    display: inline-flex;
+    max-width: 100%;
+    background-color: white;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.slideOneText {
+    max-width: 50%;
+    background-color: white;
+    margin-left: 15m;
+    margin-bottom: 3em;
+}
+
+.slideOneBlank {
+    display: inline-flex;
+    text-align: center;
+    background-color: #f1eade;
+    max-width: 50%;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    margin-left: 1em;
+}
+
+.slideText {
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.textTitle {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+.resourcesImage {
+    height: 900px;
+
+}
