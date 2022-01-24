@@ -4,7 +4,7 @@ import axios from "axios";
 import jwtDecode from "jwt-decode";
 
 
-const CreateClub = () => {
+const CreateClub = ({user}) => {
     const [clubName, setClubName] = useState("");
     const [clubDescription, setClubDescription] = useState("");
     const [clubBook, setClubBook] = useState("");
@@ -17,13 +17,15 @@ const CreateClub = () => {
 
     let handleSubmit = async (event) => {
         const token = localStorage.getItem('token');
+        const decodedToken = jwtDecode(token)
         console.log(jwtDecode(token))
+        console.log(event)
         event.preventDefault();
         newClub = {
         clubName: clubName,
         clubDescription: clubDescription,
         clubBook: clubBook,
-        creator: jwtDecode(token)
+        clubCreator: decodedToken.user_id
         }
        
     

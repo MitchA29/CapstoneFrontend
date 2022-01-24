@@ -122,14 +122,14 @@ function Profile(){
                 <Container>
                     <div>
                         <Row>
-                        {clubs.map((getClubs)=>
+                        {clubs.map((setClubs)=>
                         <Col xs="4">
                             <Card className="cardProfile">
                                 <Card.Body>
-                                    <h4 className="card-title">{getClubs.clubName}</h4>
-                                    <h5 className="random">ringleader: {getClubs.clubAuthor_id}</h5>
-                                    <h5 className="random">book of the week: {getClubs.clubBook}</h5>
-                                    <p className= "card-text">{getClubs.clubDescription}</p>
+                                    <h4 className="card-title">{setClubs.clubName}</h4>
+                                    <h5 className="random">ringleader: {setClubs.clubCreator.username}</h5>
+                                    <h5 className="random">book of the week: {setClubs.clubBook}</h5>
+                                    <p className= "card-text">{setClubs.clubDescription}</p>
                                     <a href="#" className="downloadButton" >Delete</a>
                                     <a href="#" className="downloadButton" >...</a>
                                 </Card.Body>
