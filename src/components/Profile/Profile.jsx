@@ -25,7 +25,7 @@ function Profile(){
 
     const deleteStory = async (story) =>{
         console.log(story)
-        await axios.delete('http://127.0.0.1:8000/api/stories/${story}/', {
+        await axios.delete('http://127.0.0.1:8000/api/stories/delete/'+ story, {
             headers: {
                 Authorization: 'Bearer ' + token}});
         getStories()
@@ -38,6 +38,14 @@ function Profile(){
         setClubs(response.data)
     }
 
+    const deleteClub = async (club) =>{
+        console.log(club)
+        await axios.delete('http://127.0.0.1:8000/api/clubs/delete/'+ club, {
+            headers: {
+                Authorization: 'Bearer ' + token}});
+        getClubs()
+    }
+
     const getFavorites = async () =>{
         let response = await axios.get('http://127.0.0.1:8000/api/favorites/', {
             headers: {
@@ -46,12 +54,12 @@ function Profile(){
         setFavorites(response.data)
     }
 
-    const deleteFavorite = async (id) =>{
-        let response = await axios.get('http://127.0.0.1:8000/api/favorites/delete/', {
+    const deleteFavorite = async (favorite) =>{
+        console.log(favorite)
+        await axios.delete('http://127.0.0.1:8000/api/favorites/delete/'+ favorite, {
             headers: {
                 Authorization: 'Bearer ' + token}});
-        console.log(response.data)
-        setFavorites(response.data)
+        getFavorites()
     }
 
     return(
@@ -130,7 +138,7 @@ function Profile(){
                                     <h5 className="random">ringleader: {setClubs.clubCreator.username}</h5>
                                     <h5 className="random">book of the week: {setClubs.clubBook}</h5>
                                     <p className= "card-text">{setClubs.clubDescription}</p>
-                                    <a href="#" className="downloadButton" >Delete</a>
+                                    <a href="#" className="downloadButton" onClick={() => deleteClub(setClubs.id)} >Delete</a>
                                     <a href="#" className="downloadButton" >...</a>
                                 </Card.Body>
                             </Card>
