@@ -3,6 +3,7 @@ import "./Profile.css"
 import axios from 'axios';
 import {Card} from "react-bootstrap";
 import { Container, Row, Col } from "reactstrap";
+import Read from "../Read/Read";
 
 
 function Profile(){
@@ -82,7 +83,7 @@ function Profile(){
                                     <h5 className="random">By: {setStories.storyAuthor.username}</h5>
                                     <h6 className="random">Genre: {setStories.storyGenre}</h6>
                                     <p className= "card-text">{setStories.storyDescription}</p>
-                                    <a href="#" className="downloadButton">Download</a>
+                                    <a className="downloadButton" href="/read">Read</a>
                                     <a href="#" className="downloadButton" onClick={() => deleteStory(setStories.id)} >Delete</a>
                                     <a href="#" className="downloadButton" >...</a>
                                 </Card.Body>
@@ -95,7 +96,7 @@ function Profile(){
             </div>
             <div className="storyHeader">
                 <div className="headerTitle">
-                    <h1>My Favorites</h1>
+                    <h1>Favorites</h1>
                 </div>
             </div>
             <div className="exploreParentProfile">
@@ -110,7 +111,7 @@ function Profile(){
                                     <h5 className="random">By: {setFavorites.favoriteStory.storyAuthor.username}</h5>
                                     <h6 className="random">Genre: {setFavorites.favoriteStory.storyGenre}</h6>
                                     <p className= "card-text">{setFavorites.favoriteStory.storyDescription}</p>
-                                    <a href="#" className="downloadButton">Download</a>
+                                    <a className="downloadButton" href="/read">Read</a>
                                     <a href="#" className="downloadButton" onClick={() => deleteFavorite(setFavorites.id)}>Unfavorite</a>
                                 </Card.Body>
                             </Card>

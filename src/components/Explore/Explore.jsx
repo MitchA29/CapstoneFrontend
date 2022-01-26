@@ -42,7 +42,6 @@ function Explore(props){
             Authorization: 'Bearer ' + token}});
         console.log(response.data);
         if (response.request.status === 201) {
-            alert("story saved!");
             window.location = "/profile";
         }
     }
@@ -79,7 +78,7 @@ function Explore(props){
                             <h6 className="random">Genre: {Object.storyGenre}</h6>
                             <p className= "card-text">{Object.storyDescription}</p>
                             <a href="#" className="favoriteButton"onClick={() => handleSubmit(Object)}>Favorite</a>
-                            <a href="#" className="downloadButton"onClick={() => handleSubmit(Object)}>Download</a>
+                            <a className="downloadButton" href="/Read/${Object.id}" >Read</a>
                         </Card.Body>
                     </Card>
                     </Col>
@@ -99,8 +98,7 @@ function Explore(props){
                             <h5 className="random">By: {Object.storyAuthor.username}</h5>
                             <h6 className="random">Genre: {Object.storyGenre}</h6>
                             <p className= "card-text">{Object.storyDescription}</p>
-                            <a href="#" className="favoriteButton"onClick={() => handleSubmit(Object)}>Favorite</a>
-                            <a href="#" className="downloadButton"onClick={() => handleSubmit(Object)}>Download</a>
+                                <a href="#" className="favoriteButton"onClick={() => handleSubmit(Object)}>Favorite</a>
                         </Card.Body>
                     </Card>
                     </Col>

@@ -1,16 +1,17 @@
 .bookClubsParent {
     margin-top: 1em;
-    display: inline-flex;
     max-width: 100%;
-    margin-left: 2em;
+    margin-left: 1em;
+    margin-right: .5em;
     min-height: 700px;;
 }
 
 .clubCard {
-    max-width: 25em;
+    width: 27em;
+    height: 13em;
     margin-bottom: 2em;
-    margin-left: 1rem;
     margin-right: 1em;
+    margin-left: 1em;
 }
 
 .joinButton {

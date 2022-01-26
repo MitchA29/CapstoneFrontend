@@ -14,6 +14,7 @@ import Upload from "./Upload/Upload";
 import LogoutUser from "./Logout/Logout";
 import CreateClub from "./CreateClub/CreateClub";
 import Resources from "./Resources/Resources";
+import Read from "./Read/Read";
 
 
 class App extends Component {
@@ -49,6 +50,7 @@ class App extends Component {
                         <Route path="/upload" element={<Upload/>} />
                         <Route path="/logout" element={<LogoutUser/>} />
                         <Route path="/createclub" element={<CreateClub/>} />
+                        <Route path="/read" element={<Read/>} />
                     </Routes>
               </div>
             </div>

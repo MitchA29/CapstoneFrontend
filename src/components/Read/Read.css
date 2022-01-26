@@ -1,0 +1,9 @@
+.readParent {
+    width: 100%;
+    background-color: #f1eade;
+    min-height: 700px;
+}
+
+.readMaterial {
+    background-color: white;
+}
