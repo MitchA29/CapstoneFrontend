@@ -1,5 +1,9 @@
 
 .signUpParent {
+    min-height: 700px;
+}
+
+.signUpForm {
     background-color: rgb(192, 193, 197);
     margin-left: 5em;
     margin-right: 5em;

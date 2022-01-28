@@ -48,17 +48,13 @@ const Upload = ({user}) => {
         <div className="uploadParent">
             <div className="uploadForm">
                 <form class="row g-3" onSubmit={(event) => handleSubmit(event)}>
-                        <div class="col-md-10">
-                            <label for="inputStoryDocument" class="form-label">Paste Text Here</label>
-                            <textarea class="form-control" id="inputStoryName" onChange={(event) => setStoryDocument(event.target.value)}rows="3"></textarea>
-                        </div>
+                    <div class="col-md-10">
+                        <label for="inputStoryDocument" class="form-label">Paste Text Here</label>
+                        <textarea class="form-control" id="inputStoryName" onChange={(event) => setStoryDocument(event.target.value)}rows="3"></textarea>
+                    </div>
                     <div class="col-md-5">
                         <label for="inputStoryName" class="form-label">Title</label>
                         <input type="text" class="form-control" id="inputStoryName"onChange={(event) => setStoryName(event.target.value)}/>
-                    </div>
-                    <div class="col-md-5">
-                        <label for="inputStoryDescription" class="form-label">Description</label>
-                        <input type="text" class="form-control" id="inputStoryDescription" onChange={(event) => setStoryDescription(event.target.value)}/>
                     </div>
                     <div class="col-md-5">
                     <select class="form-select" aria-label="Genre" id="inputStoryGenre" onChange={(event) => setStoryGenre(event.target.value)}>
@@ -79,12 +75,14 @@ const Upload = ({user}) => {
                         <option value="Other">Other</option>
                     </select>
                     </div>
+                    <div class="col-md-10">
+                        <label for="inputStoryDescription" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="inputStoryDescription" onChange={(event) => setStoryDescription(event.target.value)}/>
+                    </div>
                     <div class="col-12">
                         <button type="submit" id="uploadButton" class="uploadButton">Upload</button>
                     </div>
                 </form>
-            </div>
-            <div className="footer">
             </div>
         </div>
     );

@@ -2,7 +2,7 @@
 
 .uploadParent {
     background-color: #f1eade;
-    height: 700px;
+    min-height: 700px;
 }
 
 .uploadForm {

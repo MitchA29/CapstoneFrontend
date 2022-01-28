@@ -52,7 +52,7 @@ const CreateClub = ({user}) => {
                         <label for="inputClubBook" class="form-label">Club Book</label>
                         <input type="text" class="form-control" id="inputStoryName"onChange={(event) => setClubBook(event.target.value)}/>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-10">
                         <label for="inputClubDescription" class="form-label">Description</label>
                         <input type="text" class="form-control" id="inputStoryDescription" onChange={(event) => setClubDescription(event.target.value)}/>
                     </div>

@@ -11,13 +11,14 @@ function Profile(){
     const [stories, setStories] = useState([])
     const [clubs, setClubs] = useState([])
     const [favorites, setFavorites] = useState([])
+    const [members, setMembers] = useState([])
     const token = localStorage.getItem('token');
     const url = "http://localhost:3000/read/";
     useEffect(()=> {
         getStories()
         getClubs()
         getFavorites()
-
+        getMembers()
     },[])
 
     const getStories = async () =>{
@@ -64,6 +65,22 @@ function Profile(){
             headers: {
                 Authorization: 'Bearer ' + token}});
         getFavorites()
+    }
+
+    const getMembers = async () =>{
+        let response = await axios.get('http://127.0.0.1:8000/api/members/', {
+            headers: {
+                Authorization: 'Bearer ' + token}});
+        console.log(response.data)
+        setMembers(response.data)
+    }
+
+    const deleteMember = async (member) =>{
+        console.log(member)
+        await axios.delete('http://127.0.0.1:8000/api/members/delete/'+ member, {
+            headers: {
+                Authorization: 'Bearer ' + token}});
+        getMembers()
     }
 
     return(
@@ -126,7 +143,7 @@ function Profile(){
             </div>
             <div className="storyHeader">
                 <div className="headerTitle">
-                    <h1>My clubs</h1>
+                    <h1>My Clubs</h1>
                     <a className="createClubButtonProfile" href="/createclub">Create Club</a>
                 </div>
             </div>
@@ -144,6 +161,25 @@ function Profile(){
                                     <p className= "card-text">{setClubs.clubDescription}</p>
                                     <a href="#" className="downloadButton" onClick={() => deleteClub(setClubs.id)} >Delete</a>
                                     <a href="#" className="downloadButton" >...</a>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        )}
+                        </Row>
+                    </div>
+                </Container>
+                <Container>
+                    <div>
+                        <Row>
+                        {members.map((setMembers)=>
+                        <Col xs="4">
+                            <Card className="cardProfile">
+                                <Card.Body>
+                                    <h4 className="card-title">{setMembers.club.clubName}</h4>
+                                    <h5 className="random">ringleader: {setMembers.club.clubCreator.username}</h5>
+                                    <h5 className="random">book of the week: {setMembers.club.clubBook}</h5>
+                                    <p className= "card-text">{setMembers.club.clubDescription}</p>
+                                    <a href="#" className="downloadButton" onClick={() => deleteMember(setMembers.id)} >Leave</a>
                                 </Card.Body>
                             </Card>
                         </Col>

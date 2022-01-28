@@ -30,13 +30,14 @@ const SignUp = () => {
 
     return (
         <div className="signUpParent">
+            <div className="signUpForm">
             <form class="row g-3" onSubmit={(event) => handleSubmit(event)}>
             <div class="col-md-5">
                 <label for="inputFirstName" class="form-label">First Name</label>
                 <input type="text" class="form-control" id="inputFirstName" onChange={(event) => setFirstName(event.target.value)}/>
             </div>
             <div class="col-md-5">
-                <label for="inputLastName" class="form-label">LastName</label>
+                <label for="inputLastName" class="form-label">Last Name</label>
                 <input type="text" class="form-control" id="inputLastName"onChange={(event) => setLastName(event.target.value)}/>
             </div>
             <div class="col-10">
@@ -55,6 +56,7 @@ const SignUp = () => {
                 <button type="submit" id="signUpButton" class="signUpButton">Sign Up</button>
             </div>
         </form>
+        </div>
         </div>
     );
 }
