@@ -3,7 +3,8 @@ import "./Profile.css"
 import axios from 'axios';
 import {Card} from "react-bootstrap";
 import { Container, Row, Col } from "reactstrap";
-import Read from "../Read/Read";
+import readStory from "../Read/Read";
+import {Link} from "react-router-dom"
 
 
 function Profile(){
@@ -11,10 +12,12 @@ function Profile(){
     const [clubs, setClubs] = useState([])
     const [favorites, setFavorites] = useState([])
     const token = localStorage.getItem('token');
+    const url = "http://localhost:3000/read/";
     useEffect(()=> {
         getStories()
         getClubs()
         getFavorites()
+
     },[])
 
     const getStories = async () =>{
@@ -83,7 +86,7 @@ function Profile(){
                                     <h5 className="random">By: {setStories.storyAuthor.username}</h5>
                                     <h6 className="random">Genre: {setStories.storyGenre}</h6>
                                     <p className= "card-text">{setStories.storyDescription}</p>
-                                    <a className="downloadButton" href="/read">Read</a>
+                                    <Link className="downloadButton" to={`/explore/${setStories.id}`}>Read</Link>
                                     <a href="#" className="downloadButton" onClick={() => deleteStory(setStories.id)} >Delete</a>
                                     <a href="#" className="downloadButton" >...</a>
                                 </Card.Body>
@@ -111,7 +114,7 @@ function Profile(){
                                     <h5 className="random">By: {setFavorites.favoriteStory.storyAuthor.username}</h5>
                                     <h6 className="random">Genre: {setFavorites.favoriteStory.storyGenre}</h6>
                                     <p className= "card-text">{setFavorites.favoriteStory.storyDescription}</p>
-                                    <a className="downloadButton" href="/read">Read</a>
+                                    <Link className="downloadButton" to={`/explore/${setFavorites.favoriteStory.id}`}>Read</Link>
                                     <a href="#" className="downloadButton" onClick={() => deleteFavorite(setFavorites.id)}>Unfavorite</a>
                                 </Card.Body>
                             </Card>

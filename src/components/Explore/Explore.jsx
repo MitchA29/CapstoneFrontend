@@ -4,6 +4,7 @@ import {Card} from "react-bootstrap";
 import "./Explore.css";
 import { Container, Row, Col } from "reactstrap";
 import jwtDecode from "jwt-decode";
+import {Link} from "react-router-dom"
 
 function Explore(props){
     const [stories, setStories] = useState([])
@@ -77,8 +78,8 @@ function Explore(props){
                             <h5 className="random">By: {Object.storyAuthor.username}</h5>
                             <h6 className="random">Genre: {Object.storyGenre}</h6>
                             <p className= "card-text">{Object.storyDescription}</p>
+                            <Link className="downloadButton" to={`/explore/${Object.id}`}>Read</Link>
                             <a href="#" className="favoriteButton"onClick={() => handleSubmit(Object)}>Favorite</a>
-                            <a className="downloadButton" href="/Read/${Object.id}" >Read</a>
                         </Card.Body>
                     </Card>
                     </Col>
@@ -98,7 +99,8 @@ function Explore(props){
                             <h5 className="random">By: {Object.storyAuthor.username}</h5>
                             <h6 className="random">Genre: {Object.storyGenre}</h6>
                             <p className= "card-text">{Object.storyDescription}</p>
-                                <a href="#" className="favoriteButton"onClick={() => handleSubmit(Object)}>Favorite</a>
+                            <Link className="downloadButton" to={`/explore/${Object.id}`}>Read</Link>
+                            <a href="#" className="favoriteButton"onClick={() => handleSubmit(Object)}>Favorite</a>
                         </Card.Body>
                     </Card>
                     </Col>

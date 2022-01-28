@@ -50,7 +50,7 @@ class App extends Component {
                         <Route path="/upload" element={<Upload/>} />
                         <Route path="/logout" element={<LogoutUser/>} />
                         <Route path="/createclub" element={<CreateClub/>} />
-                        <Route path="/read" element={<Read/>} />
+                        <Route path="/explore/:storyId" element={<Read/>} />
                     </Routes>
               </div>
             </div>
