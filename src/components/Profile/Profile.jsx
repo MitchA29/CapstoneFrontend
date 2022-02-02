@@ -105,7 +105,6 @@ function Profile(){
                                     <p className= "card-text">{setStories.storyDescription}</p>
                                     <Link className="downloadButton" to={`/explore/${setStories.id}`}>Read</Link>
                                     <a href="#" className="downloadButton" onClick={() => deleteStory(setStories.id)} >Delete</a>
-                                    <a href="#" className="downloadButton" >...</a>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -160,7 +159,6 @@ function Profile(){
                                     <h5 className="random">book of the week: {setClubs.clubBook}</h5>
                                     <p className= "card-text">{setClubs.clubDescription}</p>
                                     <a href="#" className="downloadButton" onClick={() => deleteClub(setClubs.id)} >Delete</a>
-                                    <a href="#" className="downloadButton" >...</a>
                                 </Card.Body>
                             </Card>
                         </Col>

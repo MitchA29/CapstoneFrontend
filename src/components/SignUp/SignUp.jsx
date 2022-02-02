@@ -23,7 +23,6 @@ const SignUp = () => {
         let response = await axios.post("http://127.0.0.1:8000/api/auth/register/", newPerson);
         console.log(response.data);
         if (response.request.status === 201) {
-            alert("You're in! Please sign in to explore.");
             window.location = "/login";
         }
     };

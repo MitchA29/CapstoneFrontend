@@ -39,7 +39,6 @@ const Upload = ({user}) => {
             Authorization: 'Bearer ' + token}});
         console.log(response.data);
         if (response.request.status === 201) {
-            alert("Story created!");
             window.location = "/profile";
         }
     }
